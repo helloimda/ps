@@ -1,12 +1,11 @@
 #include<iostream>
-#include<vector>
 #include <stack>
 #include <queue>
 using namespace std;
 
 int main()
 {
-	int n,x,cnt=1,flag=0;
+	int n,x,cnt=1;
 	cin >> n;
 	stack<int> v;
 	queue<char> answer;
@@ -16,20 +15,16 @@ int main()
 			do {
 				v.push(cnt);
 				answer.push('+');
-				//cout << "+++" << endl;
 			} while (x != cnt++);		//x와 cnt가 같아질때까지 루프
 			v.pop();
 			answer.push('-');
-			//cout << "----" << endl;
 		}
 		else {		  					//스택 탑이 숫자가 입력받은 값보다 작거나 같을경우
 			if (v.top() == x) {		//같다면 pop을 진행
 				v.pop();
 				answer.push('-');
-				//cout << "----" << endl;
 			}
 			else {
-				flag = 1;
 				for (int j = i; j < n; j++) {
 					cin >> x;
 				}
@@ -42,5 +37,4 @@ int main()
 		cout << answer.front() << "\n";
 		answer.pop();
 	}
-
 }
