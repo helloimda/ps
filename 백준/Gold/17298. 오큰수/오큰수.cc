@@ -6,9 +6,7 @@ using namespace std;
 int main()
 {
 	int n, a, max, min, cnt=0;
-	
 	stack<int> s,index;
-	
 	cin >> n;
 	cin >> a;
 	vector<int> answer(n);
@@ -18,12 +16,10 @@ int main()
 
 	for (int i = 1; i < n; i++) {
 		cin >> a;
-
 		if (s.empty()) { //초깃값 설정
 			max = a;
 			s.push(a);
 			index.push(i);
-			cnt = i;
 			continue;
 		}
 		if (s.top() < a) { //오큰수 일때
